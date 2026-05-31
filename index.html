@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al Taller de Desarrollo Web</title>
+</head>
+<body>
+
+    <h1>Formulario de Inscripción</h1>
+    <h2>Taller de Desarrollo Web</h2>
+    <p>Complete todos los campos obligatorios marcados con <strong>*</strong> para registrarse en el taller.</p>
+
+    <form action="#" method="post">
+
+        <!-- SECCIÓN 1: DATOS PERSONALES -->
+        <fieldset>
+            <legend>Sección 1: Datos Personales</legend>
+
+            <label for="nombre">Nombres y apellidos: *</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Carlos Pérez López"
+                required minlength="3" maxlength="80">
+            <br><br>
+
+            <label for="correo">Correo electrónico: *</label><br>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com"
+                required maxlength="100">
+            <br><br>
+
+            <label for="telefono">Número de teléfono: *</label><br>
+            <input type="tel" id="telefono" name="telefono" placeholder="0999999999"
+                pattern="[0-9]{10}" required maxlength="10" minlength="10">
+            <br><br>
+
+            <label for="edad">Edad: *</label><br>
+            <input type="number" id="edad" name="edad" placeholder="Ej: 20"
+                min="15" max="80" required>
+            <br><br>
+
+            <label for="fecha_nacimiento">Fecha de nacimiento: *</label><br>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"
+                required min="1944-01-01" max="2009-12-31">
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 2: DATOS ACADÉMICOS -->
+        <fieldset>
+            <legend>Sección 2: Datos Académicos</legend>
+
+            <label for="carrera">Carrera o curso: *</label><br>
+            <input type="text" id="carrera" name="carrera"
+                placeholder="Ej: Ingeniería en Sistemas"
+                required minlength="3" maxlength="100">
+            <br><br>
+
+            <label for="nivel">Nivel académico: *</label><br>
+            <select id="nivel" name="nivel" required>
+                <option value="">-- Seleccione una opción --</option>
+                <option value="bachillerato">Bachillerato</option>
+                <option value="tecnologico">Tecnológico / Técnico</option>
+                <option value="universitario">Universitario (Pregrado)</option>
+                <option value="posgrado">Posgrado (Maestría / Doctorado)</option>
+                <option value="otro">Otro</option>
+            </select>
+            <br><br>
+
+            <label for="institucion">Institución educativa:</label><br>
+            <input type="text" id="institucion" name="institucion"
+                placeholder="Ej: Universidad de Guayaquil" maxlength="120">
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 3: PREFERENCIAS DEL TALLER -->
+        <fieldset>
+            <legend>Sección 3: Preferencias del Taller</legend>
+
+            <p><strong>Modalidad del taller: *</strong></p>
+            <input type="radio" id="presencial" name="modalidad" value="presencial" required>
+            <label for="presencial">Presencial</label><br>
+            <input type="radio" id="virtual" name="modalidad" value="virtual">
+            <label for="virtual">Virtual</label><br>
+            <input type="radio" id="hibrida" name="modalidad" value="hibrida">
+            <label for="hibrida">Híbrida</label>
+
+            <br>
+
+            <p><strong>Temas de interés (puede seleccionar varios):</strong></p>
+            <input type="checkbox" id="html" name="temas" value="html">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="css" name="temas" value="css">
+            <label for="css">CSS</label><br>
+            <input type="checkbox" id="javascript" name="temas" value="javascript">
+            <label for="javascript">JavaScript</label><br>
+            <input type="checkbox" id="responsive" name="temas" value="responsive">
+            <label for="responsive">Diseño Responsivo</label><br>
+            <input type="checkbox" id="git" name="temas" value="git">
+            <label for="git">Control de versiones (Git/GitHub)</label>
+
+            <br>
+
+            <p><strong>Nivel de conocimiento previo: *</strong></p>
+            <input type="radio" id="basico" name="conocimiento" value="basico" required>
+            <label for="basico">Básico (nunca he programado)</label><br>
+            <input type="radio" id="intermedio" name="conocimiento" value="intermedio">
+            <label for="intermedio">Intermedio (conozco algo de HTML/CSS)</label><br>
+            <input type="radio" id="avanzado" name="conocimiento" value="avanzado">
+            <label for="avanzado">Avanzado (tengo experiencia programando)</label>
+
+            <br><br>
+
+            <label for="color">Color favorito para el ambiente del taller:</label><br>
+            <input type="color" id="color" name="color" value="#3498db">
+            <br><br>
+
+            <label for="motivacion">Nivel de motivación (1 = bajo, 10 = muy alto):</label><br>
+            <input type="range" id="motivacion" name="motivacion" min="1" max="10" step="1" value="5">
+            <br><small>Deslice el control para indicar su nivel de motivación</small>
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 4: DISPONIBILIDAD -->
+        <fieldset>
+            <legend>Sección 4: Disponibilidad</legend>
+
+            <label for="fecha_inicio">Fecha preferida para iniciar: *</label><br>
+            <input type="date" id="fecha_inicio" name="fecha_inicio" required min="2025-01-01">
+            <br><br>
+
+            <label for="hora">Hora disponible: *</label><br>
+            <input type="time" id="hora" name="hora" required min="06:00" max="22:00">
+            <br><br>
+
+            <label for="jornada">Jornada preferida: *</label><br>
+            <select id="jornada" name="jornada" required>
+                <option value="">-- Seleccione una jornada --</option>
+                <option value="manana">Mañana (06:00 - 12:00)</option>
+                <option value="tarde">Tarde (12:00 - 18:00)</option>
+                <option value="noche">Noche (18:00 - 22:00)</option>
+            </select>
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- SECCIÓN 5: INFORMACIÓN ADICIONAL -->
+        <fieldset>
+            <legend>Sección 5: Información Adicional</legend>
+
+            <label for="archivo">Subir archivo de ejemplo (captura o documento):</label><br>
+            <input type="file" id="archivo" name="archivo"
+                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+            <br><small>Formatos permitidos: PDF, JPG, PNG, DOC, DOCX</small>
+            <br><br>
+
+            <label for="portafolio">Enlace a portafolio o perfil académico:</label><br>
+            <input type="url" id="portafolio" name="portafolio"
+                placeholder="https://mi-portafolio.com" maxlength="200">
+            <br><br>
+
+            <label for="comentarios">Comentarios adicionales:</label><br>
+            <textarea id="comentarios" name="comentarios" rows="6" cols="50"
+                placeholder="Escriba aquí cualquier información adicional..."
+                maxlength="500"></textarea>
+            <br><small>Máximo 500 caracteres.</small>
+            <br><br>
+
+            <button type="submit">Enviar Inscripción</button>
+            &nbsp;&nbsp;
+            <button type="reset">Limpiar Formulario</button>
+        </fieldset>
+
+    </form>
+
+    <br>
+    <hr>
+    <p><small>Institución Educativa — Taller de Desarrollo Web — 2025</small></p>
+
+</body>
+</html>
